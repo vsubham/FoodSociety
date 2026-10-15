@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f7f0" />
+    <meta name="description" content="Fresh, feel-good food delivered from Food Society." />
+    <title>Food Society — Good food, good mood</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Food Society home">
+        <span class="brand-mark" aria-hidden="true">f.</span>
+        <span>food<span class="brand-light">society</span></span>
+      </a>
+      <button class="delivery-address" id="address-button" type="button">
+        <span class="address-pin" aria-hidden="true">⌖</span>
+        <span class="address-copy"><small>DELIVERING TO</small><strong id="header-address">Brooklyn, NY</strong></span>
+        <span class="address-chevron" aria-hidden="true">⌄</span>
+      </button>
+      <button class="header-cart" id="header-cart" type="button" aria-label="Open your bag">
+        <span aria-hidden="true">▱</span><span class="header-cart-label">Your bag</span><span class="cart-count" id="header-count">0</span>
+      </button>
+    </header>
+
+    <main id="top" class="page-shell">
+      <section class="welcome-row" aria-labelledby="welcome-title">
+        <div class="welcome-copy">
+          <p class="eyebrow"><span class="live-dot"></span> YOUR NEIGHBORHOOD, SERVED FRESH</p>
+          <h1 id="welcome-title">Good food.<br /><span>Good mood.</span></h1>
+          <p class="welcome-subtitle">Made with care, brought to your door.</p>
+        </div>
+        <div class="welcome-meta">
+          <span class="meta-star" aria-hidden="true">✳</span>
+          <span><strong>Free delivery</strong><small>on orders over $25</small></span>
+          <span class="meta-divider"></span>
+          <span><strong>25–35 min</strong><small>estimated delivery</small></span>
+        </div>
+      </section>
+
+      <section class="feature-strip" aria-label="Today's featured dish">
+        <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1100&q=85" alt="Fresh pasta with herbs and parmesan" />
+        <div class="feature-shade"></div>
+        <div class="feature-content">
+          <span class="feature-tag">TODAY'S LITTLE OBSESSION</span>
+          <h2>Sunday kind<br />of pasta.</h2>
+          <p>Slow-made, sunshine-seasoned.</p>
+          <button class="feature-button" id="feature-button" type="button">Meet your new favorite <span aria-hidden="true">↗</span></button>
+        </div>
+        <span class="feature-index">01 <i>/</i> 03</span>
+      </section>
+
+      <section class="menu-section" aria-labelledby="menu-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">A GOOD PLACE TO START</p><h2 id="menu-title">The menu<span class="heading-period">.</span></h2></div>
+          <label class="search-box"><span aria-hidden="true">⌕</span><input id="menu-search" type="search" placeholder="Find something delicious" aria-label="Search menu" /><kbd>/</kbd></label>
+        </div>
+
+        <div class="menu-layout">
+          <div class="menu-main">
+            <div class="category-list" id="category-list" role="group" aria-label="Filter by category"></div>
+            <div class="results-line"><span id="result-count">Everything, made fresh</span><span class="sort-note">✳ &nbsp;GOOD THINGS, NO SHORTCUTS</span></div>
+            <div class="menu-grid" id="menu-grid" aria-live="polite"></div>
+            <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">⌕</span><h3>Nothing on this plate.</h3><p>Try another search or category.</p></div>
+          </div>
+
+          <aside class="bag-panel" id="bag-panel" aria-labelledby="bag-title">
+            <div class="bag-heading"><div><p class="eyebrow">THE GOOD STUFF</p><h2 id="bag-title">Your bag <span id="bag-count-label">(0)</span></h2></div><span class="bag-spark" aria-hidden="true">✳</span></div>
+            <div class="bag-items" id="bag-items"><div class="bag-empty"><span aria-hidden="true">▱</span><p>Your next good meal<br />starts right here.</p></div></div>
+            <div class="bag-summary" id="bag-summary" hidden>
+              <div class="summary-line"><span>Subtotal</span><strong id="subtotal">$0.00</strong></div>
+              <div class="summary-line"><span>Delivery</span><strong id="delivery-fee">$2.50</strong></div>
+              <div class="summary-total"><span>Total</span><strong id="total">$2.50</strong></div>
+              <p class="free-delivery-note" id="free-delivery-note">Add <strong>$25.00</strong> for free delivery</p>
+              <button class="checkout-button" id="checkout-button" type="button">Continue to checkout <span aria-hidden="true">→</span></button>
+              <p class="bag-footnote">A little joy, on its way.</p>
+            </div>
+            <div class="bag-empty-prompt" id="bag-empty-prompt"><span>✳</span> A $25 order gets free delivery</div>
+          </aside>
+        </div>
+      </section>
+      <footer class="site-footer"><a class="brand footer-brand" href="#top"><span class="brand-mark">f.</span><span>food<span class="brand-light">society</span></span></a><span>Made for the love of lunch.</span><span>Brooklyn, NY <span class="footer-spark">✳</span></span></footer>
+    </main>
+
+    <div class="mobile-bag-bar" id="mobile-bag-bar" hidden><button id="mobile-bag-button" type="button"><span>▱ &nbsp;Your bag · <span id="mobile-count">0</span></span><strong id="mobile-total">$0.00 <span aria-hidden="true">→</span></strong></button></div>
+    <dialog class="app-dialog" id="app-dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
